@@ -13,3 +13,8 @@ func _on_eraser_button_down():
 
 func _on_play_button_down():
 	Globals.run = !Globals.run
+
+
+func _on_trash_button_down():
+	Globals.map = Globals.map_template.duplicate(true)
+

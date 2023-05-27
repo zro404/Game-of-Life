@@ -4,8 +4,6 @@ var Globals = preload("res://src/globals/global_resource.tres")
 
 var mouse_button_down: bool = false
 
-var map_template: Array
-
 func _ready():
 	var tmp = []
 	tmp.resize(64)
@@ -14,11 +12,11 @@ func _ready():
 	for i in range(32):
 		Globals.map.append(tmp.duplicate())
 	
-	map_template = Globals.map.duplicate(true)
+	Globals.map_template = Globals.map.duplicate(true)
 
 func _process(_delta):
 	if Globals.run:
-		var next_gen_map = map_template.duplicate(true)
+		var next_gen_map = Globals.map_template.duplicate(true)
 
 		for row in range(len(Globals.map)):
 			for col in range(len(Globals.map[row])):
